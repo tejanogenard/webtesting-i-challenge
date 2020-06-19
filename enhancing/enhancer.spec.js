@@ -14,12 +14,10 @@ describe(' Enchanting', () => {
 
 	describe('succeed', () => {
 		const Staff = {
-
 			durability: 66,
 			enhancement: 11,
     };
          const wand = {
-
 			durability: 12,
 			enhancement: 20,
         };
@@ -41,8 +39,21 @@ describe(' Enchanting', () => {
 	test('should return item enhancement - 1', () => {
 			expect(enhancer.fail(Bow).enhancement).toBe(10);
     });
-    test('should return durabiulity - 10', () => {
+    test('should return durabiulity - 5', () => {
 			expect(enhancer.fail(Bow).durability).toBe(71);
 		});
   });
+
+  describe('get', () => {
+	  const sword = {
+		  durability: 10,
+		  enhancement:11,
+	  }
+	it('should return the item durability', () => {
+		expect(enhancer.get(sword).durability).toBe(10)
+	})
+	it('should return the item enhancment', () => {
+		expect(enhancer.get(sword).enhancement).toBe(11)
+	})
+  })
 });
